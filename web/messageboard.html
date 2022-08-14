@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Message Board</title>
+<script src='qrcode/qrcode.js'></script>
+<style type='text/css'>
+#adress {
+  font-size: 12px;
+  text-align: center;
+  margin: auto;
+}
+#qrcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#message {
+  min-width: 200px;
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+}
+#post-message-wrap {
+  font-size: 20px;
+  text-align: center;
+}
+
+textarea#post-message {
+  width: 90%;
+  height: 6em;
+  resize: none;
+}
+button {
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+.message-entry {
+  font-size: 20px;
+  width: 90%;
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 15px;
+  margin: 10px auto;
+}
+</style>
+</head>
+
+<body>
+<div id='message'>
+<div id='post-message-wrap'>
+<textarea id='post-message' placeholder='Enter message here...'></textarea>
+<br />
+<button id='post-button' onclick='message.post();'>Post</button>
+<button onclick='message.update();'>Refresh</button>
+</div>
+<div id='message-entry-wrap'>
+<div class='message-entry'>Empty</div>
+</div>
+</div>
+<div id='adress'>
+    <p id='addr'></p>
+    <div id='qrcode'></div>
+</div>
+<script>
+function getaddr()
+{
+    var xmlhttpIP = new XMLHttpRequest();
+    xmlhttpIP.onreadystatechange = function () {
+        if (this.readyState==4 && this.status==200) {
+            addr = 'http://'+this.responseText+':8000/messageboard.html';
+            document.getElementById('addr').innerHTML = addr;
+            var qrcode = new QRCode(document.getElementById('qrcode'),
+                         {width: 200, height: 200});
+            qrcode.makeCode(addr);
+        }
+    }
+    xmlhttpIP.open('POST', 'hostip', true);
+    xmlhttpIP.send();
+}
+getaddr();
+
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+    if (this.readyState==4 && this.status==200) {
+        message.output(this.responseText);
+    }
+};
+message = {
+    textarea: document.getElementById('post-message'),
+    msgentry: document.getElementsByClassName('message-entry')[0],
+    post: function () {
+        xmlhttp.open('POST', '/messageboard/post', true);
+        xmlhttp.send(this.textarea.value);
+    },
+    update: function () {
+        xmlhttp.open('POST', '/messageboard/update', true);
+        xmlhttp.send();
+    },
+    output: function (msg) {
+        this.msgentry.innerHTML = msg;
+    }
+};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#ifndef FIRST_WEB_CONSTANT_H
+#define FIRST_WEB_CONSTANT_H
+
+#define MAX_FILENAME_LEN 256
+#define MAX_RECVDATA_LEN 256
+#define MAX_IPV4ADDR_LEN 17
+#define PORT 80
+
+#endif

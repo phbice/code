@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='utf-8' />
+ <title>factor</title>
+ <style type='text/css'>
+  div.container {
+   width: 80%;
+   margin: 80px auto;
+   text-align: center;
+  }
+ </style>
+</head>
+
+<body>
+ <div class='container'>
+  <h1>分解质因数</h1>
+  <p>
+   输入正整数（&ge;2）：
+   <input id='input' type='number' min='2'/>
+   <button onclick='main();'>分解</button>
+  </p>
+ <p id='output' style='font-size:2em'></p>
+ </div>
+
+<script src='factor.js'></script>
+<script>
+input = document.getElementById('input');
+output = document.getElementById('output');
+function main()
+{
+    var factors, num, msg;
+    if (/^\d+$/.test(input.value) && input.value >= 2) {
+        num = parseInt(input.value);
+        factors = factor(num);
+        msg = mathml(num, factors);
+    } else {
+        msg = '“' + input.value + '”不是大于1的正整数';
+    }
+    output.innerHTML = msg;
+}
+</script>
+</body>
+
+</html>

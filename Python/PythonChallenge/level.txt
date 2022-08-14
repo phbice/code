@@ -1,0 +1,24 @@
+0 http://www.pythonchallenge.com/pc/def/0.html 2^38
+1 274877906944.html -> map.html str_trans.py
+2 ocr.html rareletter.py
+3 equality str_case.py
+4 linkedlist.html followurl.py
+5 peak.html pickle banner.p
+6 channel.html channel\
+7 oxygen.html oxygen.png imagepx.py
+8 integrity.html bz2
+
+username: huge password: file
+9 http://www.pythonchallenge.com/pc/return/good.html plotpoints.py
+10 sequence.txt look-and-say_sequence.py
+11 5808.html level11\
+12 evil.html level12\
+13 disproportional.html
+14 italy level14\
+15 uzi finddate.py
+16 mozart level16\
+17 romance
+18 http://www.pythonchallenge.com/pc/return/balloons.html -> brightness
+username:butter password:fly
+19 http://www.pythonchallenge.com/pc/hex/bin.html
+20 idiot

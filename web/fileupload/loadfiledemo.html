@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>Load File Demo</title>
+<style type='text/css'>
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: 1px solid;
+}
+</style>
+</head>
+<body>
+<input id='fileItem' type='file'/>
+<button onclick='load();'>读取</button>
+<button onclick='abort();'>终止</button>
+<p id='log'></p>
+<script>
+reader = new FileReader()
+reader.onprogress = function (event) {
+    document.getElementById('log').innerHTML = event.loaded + '<br />' + event.total;
+}
+function load()
+{
+    var file = document.getElementById('fileItem').files[0];
+    console.log(file);
+    //reader.readAsArrayBuffer(file);
+}
+function abort()
+{
+    reader.abort();
+}
+</script>
+</body>
+</html>

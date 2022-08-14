@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8" />
+<title>Game of Life</title>
+<link rel='stylesheet' type='text/css' href='style.css' />
+</head>
+
+<body style="background-color:black">
+<div class='container'>
+    <canvas id="life" width="500" height="500" style="border:1px solid #c3c3c3"></canvas>
+    <div>
+        <button id="toggle", onclick="main();">Start</button>
+    </div>
+</div>
+
+<script src="life.js"></script>
+<script>
+var start = false;
+var life = new Life(100, 100);
+var canvas = document.getElementById("life");
+var button = document.getElementById("toggle");
+var interval;
+draw(life, canvas);
+function main() {
+    if (!start) {
+        interval = setInterval(function () {draw(life, canvas); life.next();}, 33);
+        button.innerHTML = "Stop";
+    } else {
+        clearInterval(interval);
+        button.innerHTML = "Start";
+    }
+    start = !start;
+}
+
+function draw(life, canvas) {
+    var width  = canvas.width  / life.width;
+    var height = canvas.height / life.height;
+    var context = canvas.getContext("2d");
+    for (var i = 0; i < life.height; i++) {
+        for (var j = 0; j < life.width; j++) {
+            if (life.pattern[i][j] == 1) {
+                context.fillStyle = "white";
+            } else {
+                context.fillStyle = "black";
+            }
+            context.fillRect(j * width, i * height, width, height);
+        }
+    }
+}
+
+//function move() {
+//    var canvas = document.getElementById("life");
+//    var context = canvas.getContext("2d");
+//    var pos = 0;
+//    var id = setInterval(frame, 5);
+//    context.fillStyle = "white";
+//    context.fillRect(0, 0, 200, 200);
+//    context.fillStyle = "blue";
+//    context.fillRect(0, 0, 20, 20);
+//    function frame() {
+//        if (pos >= 180) {
+//            clearInterval(id);
+//        } else {
+//            context.fillStyle = "white";
+//            context.fillRect(pos, pos, 20, 20);
+//            pos++;
+//            context.fillStyle = "blue";
+//            context.fillRect(pos, pos, 20, 20);
+//        }
+//    }
+//}
+</script>
+</body>
+
+</html>

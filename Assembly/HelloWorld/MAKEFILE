@@ -1,0 +1,12 @@
+# HelloWord
+EXE = HelloWorld.exe
+OBJ = Helloworld.obj
+
+LINK_FLAG = /subsystem:windows
+ML_FLAG = /c /coff
+
+$(EXE):$(OBJ)
+	Link $(LINK_FLAG) /out:$(EXE) $(OBJ)
+	
+.asm.obj:
+	ml $(ML_FLAG) $<

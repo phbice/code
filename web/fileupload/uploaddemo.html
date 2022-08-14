@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>File Upload Demo</title>
+</head>
+<body>
+<input id='fileItem' type='file'/>
+<button onclick='upload();'>上传</button>
+<p id='progress'></p>
+<script>
+function Progress()
+{
+    this.progressElem = document.getElementById('progress');
+    this.prevLoaded = 0;
+    this.prevTime = new Date();
+    this.speed = 0;
+    this.update = function (loaded, total) {
+        nowTime = new Date();
+        if (nowTime - this.prevTime >= 1000) {
+            this.speed = (loaded-this.prevLoaded) / (nowTime-this.prevTime) * 1000;
+            this.speed = toFileSize(this.speed) + '/s';
+            this.prevLoaded = loaded;
+            this.prevTime = nowTime;
+        }
+        this.progressElem.innerHTML =
+            '已上传：' + loaded + '<br />' +
+            '总大小：' + total + '<br />' +
+            '速度：' + this.speed + '<br />' +
+            Math.floor(loaded*100/total) + '%';
+    }
+    this.done = function () {
+        this.progressElem.innerHTML += '<br />完成！';
+    }
+}
+
+function toFileSize(size)
+{
+    if (size < 1024) {
+        return size + 'B';
+    } else if (size < 1024*1024) {
+        return (size / 1024).toFixed(2) + 'KB';
+    } else if (size < 1024*1024*1024) {
+        return (size / (1024*1024)).toFixed(2) + 'MB';
+    } else if (size < 1024*1024*1024*1024) {
+        return (size / (1024*1024*1024)).toFixed(2) + 'GB';
+    }
+}
+
+function FileUpload(file)
+{
+    var thisFileUpload = this;
+    this.progress = new Progress()
+    this.xhr = new XMLHttpRequest();
+    this.xhr.upload.addEventListener('progress', function(event) {
+        if (event.lengthComputable) {
+            thisFileUpload.progress.update(event.loaded, event.total)
+        }
+    });
+    this.xhr.upload.addEventListener('load', function(event) {
+        thisFileUpload.progress.done();
+    })
+    this.xhr.open('POST', '/file_upload', true);
+    this.xhr.send(file);
+}
+
+function upload()
+{
+    var file = document.getElementById('fileItem').files[0];
+    new FileUpload(file);
+}
+</script>
+</body>
+</html>

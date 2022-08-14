@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>File Upload Demo</title>
+<style type='text/css'>
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: 1px solid;
+}
+</style>
+</head>
+<body>
+<input id='fileItem' type='file'/>
+<button onclick='upload();'>上传</button>
+<table>
+<tr><th>文件名</th><th>大小</th><th>类型</th><th>最后修改时间</th></tr>
+<tr id='fileInfo'></tr>
+</table>
+<script>
+function upload()
+{
+    var file = document.getElementById('fileItem').files[0];
+    var fileInfo = document.getElementById('fileInfo')
+    fileInfo.innerHTML = '<td>'+file.name+'</td>'+
+                         '<td>'+file.size+'</td>'+
+                         '<td>'+file.type+'</td>'+
+                         '<td>'+file.lastModified+'</td>';
+}
+</script>
+</body>
+</html>

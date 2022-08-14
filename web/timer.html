@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Timer</title>
+<style type='text/css'>
+ div.container {
+  width: 500px;
+  height: 270px;
+  border: 2px solid;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 50px;
+ }
+ div.button-container {
+  width: 90%;
+  height: auto;
+  margin: auto;
+ }
+ div.button {
+  width: 160px;
+  height: 66px;
+  border: 2px outset;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ #toggle {
+  float: left;
+ }
+ #reset {
+  float: right;
+ }
+ p#display {
+  font-size: 1.2em;
+  margin: 25px;
+ }
+ span#millisecond {
+  font-size: 0.4em;
+ }
+</style>
+</head>
+
+<body>
+<div class='container'>
+ <p id="display">
+  <span id='hour'>0</span> : 
+  <span id='minute'>0</span> : 
+  <span id='second'>0</span> . 
+  <span id='millisecond'>000</span>
+ </p>
+ <div class='button-container'>
+  <div class='button' id="toggle" onclick="toggle();">Start</div>
+  <div class='button' id="reset" onclick="reset();">Reset</div>
+ </div>
+</div>
+
+<script>
+var timer = {
+    isRunning : false,
+    startTime : 0,
+    accumTime : 0,
+    getTime  : function () {
+        let date = new Date();
+        return date.getTime();
+    },
+    start : function () {
+        this.startTime = this.getTime();
+        this.isRunning = true;
+    },
+    get   : function () {
+        if (this.isRunning) {
+            time = this.getTime() - this.startTime;
+        } else {
+            time = 0;
+        }
+        return this.accumTime + time;
+    },
+    stop  : function () {
+        this.accumTime += this.getTime() - this.startTime;
+        this.isRunning = false;
+    },
+    reset : function () {
+        this.isRunning = false;
+        this.startTime = 0;
+        this.accumTime = 0;
+    }
+};
+
+var display = {
+    hour: document.getElementById("hour"),
+    minute: document.getElementById("minute"),
+    second: document.getElementById("second"),
+    millisecond: document.getElementById("millisecond"),
+    
+    set: function (time) {
+        this.millisecond.innerHTML = String(time % 1000 + 1000).substr(1);
+        this.second.innerHTML = Math.floor(time/1000) % 60;
+        this.minute.innerHTML = Math.floor(time/1000/60) % 60;
+        this.hour.innerHTML = Math.floor(time/1000/60/60);
+    }
+};
+var buttonToggle = document.getElementById("toggle");
+var buttonReset = document.getElementById("reset");
+
+function toggle() {
+    if (timer.isRunning) {
+        timer.stop();
+        buttonToggle.innerHTML = "Start";
+    } else {
+        timer.start();
+        buttonToggle.innerHTML = "Stop";
+        requestAnimationFrame(displayTime);
+    }
+}
+
+function reset() {
+    timer.reset();
+    buttonToggle.innerHTML = "Start"
+    displayTime();
+}
+
+function timeToString(time) {
+    var milliseconds = time % 1000;
+    var seconds = Math.floor(time/  1000) % 60;
+    var minutes = Math.floor(time/1000/60) % 60;
+    var hours   = Math.floor(time/1000/60/60);
+    return hours + " : " + minutes + " : " + seconds + " . " + String(milliseconds + 1000).substr(1);
+}
+
+function displayTime() {
+    var time = timer.get();
+    display.set(time);
+    if (timer.isRunning) {
+        requestAnimationFrame(displayTime);
+    }
+}
+</script>
+</body>
+
+</html>

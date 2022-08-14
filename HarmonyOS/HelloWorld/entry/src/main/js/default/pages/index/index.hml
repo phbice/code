@@ -1,0 +1,6 @@
+<div class="container">
+    <text class="text">
+        Hello World
+    </text>
+    <button class="button" type="capsule" value="Next", onclick="launch"></button>
+</div>

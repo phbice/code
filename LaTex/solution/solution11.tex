@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{geometry}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{.5\baselineskip}
+%\linespread{1.6}
+\pagestyle{empty}
+\geometry{a4paper, scale = 0.8}
+\begin{document}
+
+\section*{$$\sum_{n=1}^\infty {\frac{1}{1+n^2}}$$}
+
+设$f(x)$周期函数, 周期为$2\pi$, 它在$[-\pi,\pi)$上的表达式为: $f(x) = e^x$. 考虑其傅里叶级数展开:\\
+$$
+\begin{aligned}
+&a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} {f(x) \mathrm{d}x} =\frac{e^\pi - e^{-\pi}}{\pi} \\
+&a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} {f(x) \cos {nx} \mathrm{d}x} = 
+\frac{e^\pi - e^{-\pi}}{\pi} \; \frac{(-1)^n}{1+n^2}\\
+&b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} {f(x) \sin {nx} \mathrm{d}x}= 
+\frac{e^\pi - e^{-\pi}}{\pi} \; \frac{(-1)^{^{n+1}} n }{1+n^2}\\
+\end{aligned}
+$$
+于是:
+$$
+\begin{aligned}
+s(x) &= \frac{a_0}{2} + \sum_{n=1}^\infty  (a_n \cos{nx} + b_n \sin{nx})\\
+&= \frac{e^\pi - e^{-\pi}}{2\pi} + \sum_{n=1}^\infty \left(
+\frac{e^\pi - e^{-\pi}}{\pi} \; \frac{(-1)^n}{1+n^2} \cos{nx} + 
+\frac{e^\pi - e^{-\pi}}{\pi} \; \frac{(-1)^{^{n+1}} n }{1+n^2} \sin{nx}\right)\\
+ &= \frac{e^\pi -e^{-\pi}}{\pi} \left[\frac{1}{2} + \sum_{n=1}^\infty \left(\frac{(-1)^n}{1+n^2} \cos{nx} + 
+ \frac{(-1)^{^{n+1}}n}{1+n^2} \sin{nx} \right)\right]
+\end{aligned}
+$$
+
+令$x=\pi$, 可得
+$$s(\pi) = \frac{e^\pi -e^{-\pi}}{\pi} \left(\frac{1}{2} + \sum_{n=1}^\infty \frac{1}{1+n^2}\right)$$
+同时, 因为$s(x)$是$f(x)$的傅里叶级数展开, $x=\pi$是$f(x)$的间断点, 所以:
+$$
+\begin{aligned}
+s(\pi)&= \frac{1}{2} \left[ \lim_{x \to \pi^{^-}} f(x) + \lim_{x \to \pi^{^+}} f(x) \right] \\
+&= \frac{e^\pi + e^{-\pi}}{2}\\
+\end{aligned}
+$$
+
+所以:
+$$
+\frac{e^\pi -e^{-\pi}}{\pi} \left(\frac{1}{2} + \sum_{n=1}^\infty \frac{1}{1+n^2}\right) = s(x) = 
+\frac{e^\pi + e^{-\pi}}{2}
+$$
+即:
+$$
+\sum_{n=1}^\infty \frac{1}{1+n^2} = \frac{e^\pi + e^{-\pi}}{e^\pi - e^{-\pi}} \; \frac{\pi}{2} \; - \; \frac{1}{2}
+$$
+\end{document}

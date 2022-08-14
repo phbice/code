@@ -1,0 +1,6 @@
+# LaTex gitignore
+*.pdf
+*.gz
+*.log
+*.aux
+*.un~
