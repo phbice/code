@@ -7,19 +7,20 @@ Created on Tue Mar 24 16:53:44 2020
 """
 
 import tkinter as tk
+from tkinter import ttk
 
 mainWd = tk.Tk()
 mainWd.title('Text')
 mainWd.geometry('500x300')
 
-entry = tk.Entry(mainWd)
+entry = ttk.Entry(mainWd)
 entry.pack()
 
 def insert():
     var = entry.get()
     text.insert('insert', var)
 
-button = tk.Button(mainWd, text='insert', width=10, height=2, command=insert)
+button = ttk.Button(mainWd, text='insert', width=10, command=insert)
 button.pack()
 
 text = tk.Text(mainWd, height=3)

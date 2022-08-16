@@ -1,0 +1,186 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7676,        178]
+NotebookOptionsPosition[      7125,        161]
+NotebookOutlinePosition[      7538,        178]
+CellTagsIndexPosition[      7495,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"block", "[", "\"\<O\>\"", "]"}]], "Input",
+ CellChangeTimes->{
+  3.868483701313106*^9, {3.8684837797375064`*^9, 3.868483780737258*^9}, 
+   3.8684838128540835`*^9, {3.8684838612392197`*^9, 3.8684839111360426`*^9}, {
+   3.86848394899658*^9, 3.8684839776566935`*^9}, 
+   3.868499952690543*^9},ExpressionUUID->"935e26ff-e58f-4433-a70c-\
+1d9348e3e82b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CreateWindow", "[", 
+   RowBox[{
+    RowBox[{"DocumentNotebook", "[", 
+     RowBox[{"DynamicModule", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"row", "=", "10"}], ",", 
+         RowBox[{"col", "=", "10"}], ",", 
+         RowBox[{"task", "=", "None"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"EventHandler", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"Dynamic", "[", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"task", "===", "None"}], ",", 
+              RowBox[{"task", "=", 
+               RowBox[{"SessionSubmit", "[", 
+                RowBox[{"ScheduledTask", "[", 
+                 RowBox[{
+                  RowBox[{"row", "=", 
+                   RowBox[{"Clip", "[", 
+                    RowBox[{
+                    RowBox[{"row", "-", "1"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "20"}], "}"}]}], "]"}]}], ",", 
+                  RowBox[{"Quantity", "[", 
+                   RowBox[{"1", ",", "\"\<Seconds\>\""}], "]"}]}], "]"}], 
+                "]"}]}]}], "]"}], ";", 
+            RowBox[{"Raster", "[", 
+             RowBox[{"SparseArray", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"row", ",", "col"}], "}"}], "->", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"20", ",", "20"}], "}"}], ",", "1"}], "]"}], "]"}]}], 
+           "]"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<KeyDown\>\"", ":>", 
+           RowBox[{"Switch", "[", 
+            RowBox[{
+             RowBox[{"CurrentValue", "[", "\"\<EventKey\>\"", "]"}], ",", 
+             "\[IndentingNewLine]", "\"\<UpArrow\>\"", ",", 
+             RowBox[{"row", "=", 
+              RowBox[{"Clip", "[", 
+               RowBox[{
+                RowBox[{"row", "+", "1"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "20"}], "}"}]}], "]"}]}], ",", 
+             "\[IndentingNewLine]", "\"\<DownArrow\>\"", ",", 
+             RowBox[{"row", "=", 
+              RowBox[{"Clip", "[", 
+               RowBox[{
+                RowBox[{"row", "-", "1"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "20"}], "}"}]}], "]"}]}], ",", 
+             "\[IndentingNewLine]", "\"\<LeftArrow\>\"", ",", 
+             RowBox[{"col", "=", 
+              RowBox[{"Clip", "[", 
+               RowBox[{
+                RowBox[{"col", "-", "1"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "20"}], "}"}]}], "]"}]}], ",", 
+             "\[IndentingNewLine]", "\"\<RightArrow\>\"", ",", 
+             RowBox[{"col", "=", 
+              RowBox[{"Clip", "[", 
+               RowBox[{
+                RowBox[{"col", "+", "1"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "20"}], "}"}]}], "]"}]}]}], "]"}]}], 
+          "}"}]}], "]"}]}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"WindowSize", "->", "All"}], ",", 
+    RowBox[{"WindowTitle", "->", "\"\<demo\>\""}], ",", 
+    RowBox[{"WindowElements", "->", 
+     RowBox[{"{", "}"}]}], ",", 
+    RowBox[{"WindowFrame", "->", "\"\<Palette\>\""}], ",", 
+    RowBox[{"WindowFrameElements", "->", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<CloseBox\>\"", ",", "\"\<MinimizeBox\>\"", ",", 
+       "\"\<DocumentIcon\>\""}], "}"}]}], ",", 
+    RowBox[{"Editable", "->", "False"}], ",", 
+    RowBox[{"Selectable", "->", "True"}], ",", 
+    RowBox[{"Deletable", "->", "False"}], ",", 
+    RowBox[{"ShowCellBracket", "->", "False"}], ",", 
+    RowBox[{"WindowFloating", "->", "True"}], ",", 
+    RowBox[{"NotebookEventActions", "->", 
+     RowBox[{"{", 
+      RowBox[{"\"\<WindowClose\>\"", ":>", 
+       RowBox[{"TaskRemove", "/@", 
+        RowBox[{"Tasks", "[", "]"}]}]}], "}"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.868326479494962*^9, 3.868326573050415*^9}, {
+   3.868326688336793*^9, 3.868326906183261*^9}, {3.868326956871966*^9, 
+   3.8683269751943307`*^9}, {3.8683270094625883`*^9, 
+   3.8683270149300947`*^9}, {3.86832705282906*^9, 3.8683271204409466`*^9}, {
+   3.868327188539591*^9, 3.868327276659401*^9}, {3.8683273234969344`*^9, 
+   3.8683273269899693`*^9}, {3.8683275354686403`*^9, 3.868327640123203*^9}, {
+   3.8683277449595613`*^9, 3.8683277789265757`*^9}, {3.868328130098899*^9, 
+   3.8683281674900475`*^9}, {3.8683282041478148`*^9, 3.868328275018417*^9}, {
+   3.868328323126755*^9, 3.8683284701426315`*^9}, {3.8683286429816694`*^9, 
+   3.8683286677094336`*^9}, {3.868328703706255*^9, 3.8683287536282682`*^9}, {
+   3.868330243828681*^9, 3.86833031462152*^9}, {3.8683303497171383`*^9, 
+   3.868330354309864*^9}, {3.868330417913005*^9, 3.8683305056886234`*^9}, 
+   3.868330566938142*^9, {3.8683306199274387`*^9, 3.868330648200322*^9}, 
+   3.8683306811671085`*^9, {3.8683314775750895`*^9, 3.868331482720339*^9}, {
+   3.8683315296228795`*^9, 3.868331570639225*^9}, {3.8683316029767756`*^9, 
+   3.868331648776532*^9}, {3.8683320107865844`*^9, 3.868332030118023*^9}, {
+   3.8683321682364693`*^9, 3.868332213723158*^9}, {3.8683328929877872`*^9, 
+   3.8683328935669174`*^9}, {3.868333318963975*^9, 3.868333361654195*^9}, {
+   3.8683334408360634`*^9, 3.8683334415342674`*^9}, {3.8683377846847506`*^9, 
+   3.8683377969180903`*^9}, {3.868338149573409*^9, 3.868338179843854*^9}, {
+   3.868338217271212*^9, 3.8683382185682545`*^9}, {3.8683382491065454`*^9, 
+   3.868338250112241*^9}, {3.868338319375084*^9, 3.868338355395355*^9}, {
+   3.868338398219592*^9, 3.868338399439001*^9}, {3.868396723544468*^9, 
+   3.8683968103075485`*^9}, {3.868396849935768*^9, 3.8683968754992924`*^9}, {
+   3.8683969073571205`*^9, 3.868396915922886*^9}, {3.868396970197444*^9, 
+   3.8683969854181423`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"901824f5-56f0-4bcf-acf1-7c9a703ce323"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TaskRemove", "/@", 
+   RowBox[{"Tasks", "[", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8683382599359627`*^9, 3.868338273235011*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"eb3d220b-3be1-415f-8a8a-ec389320c2a0"]
+},
+WindowSize->{615, 586},
+WindowMargins->{{Automatic, 176}, {Automatic, 86}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (2021\:5e747\:670823\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f7d21eb2-0f57-45e9-9a4e-1f0ba1b2dde9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 371, 7, 29, "Input",ExpressionUUID->"935e26ff-e58f-4433-a70c-1d9348e3e82b"],
+Cell[932, 29, 5934, 123, 692, "Input",ExpressionUUID->"901824f5-56f0-4bcf-acf1-7c9a703ce323"],
+Cell[6869, 154, 252, 5, 44, "Input",ExpressionUUID->"eb3d220b-3be1-415f-8a8a-ec389320c2a0"]
+}
+]
+*)
+

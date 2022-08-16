@@ -1,0 +1,428 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20058,        420]
+NotebookOptionsPosition[     18706,        369]
+NotebookOutlinePosition[     19063,        385]
+CellTagsIndexPosition[     19020,        382]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"words", "=", 
+  RowBox[{"DictionaryLookup", "[", 
+   RowBox[{"__", "~~", "\"\<in\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8453537755756445`*^9, 3.8453537825798597`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"abstain\"\>", ",", "\<\"adjoin\"\>", ",", "\<\"adrenalin\"\>", 
+   ",", "\<\"Adrenalin\"\>", ",", "\<\"again\"\>", ",", "\<\"Agustin\"\>", 
+   ",", "\<\"akin\"\>", ",", "\<\"Aladdin\"\>", ",", "\<\"albumin\"\>", 
+   ",", "\<\"Alcuin\"\>", ",", "\<\"Alderamin\"\>", ",", "\<\"Aldrin\"\>", 
+   ",", "\<\"Algonquin\"\>", ",", "\<\"Alvin\"\>", ",", "\<\"Anacin\"\>", 
+   ",", "\<\"Angevin\"\>", ",", "\<\"antichain\"\>", ",", "\<\"antitoxin\"\>",
+    ",", "\<\"antivenin\"\>", ",", "\<\"appertain\"\>", 
+   ",", "\<\"ascertain\"\>", ",", "\<\"aspirin\"\>", ",", "\<\"assassin\"\>", 
+   ",", "\<\"attain\"\>", ",", "\<\"Aureomycin\"\>", ",", "\<\"Austin\"\>", 
+   ",", "\<\"auxin\"\>", ",", "\<\"backspin\"\>", ",", "\<\"Baffin\"\>", 
+   ",", "\<\"Bahrain\"\>", ",", "\<\"Bakunin\"\>", ",", "\<\"Baldwin\"\>", 
+   ",", "\<\"Banjarmasin\"\>", ",", "\<\"bargain\"\>", ",", "\<\"basin\"\>", 
+   ",", "\<\"Baudouin\"\>", ",", "\<\"bearskin\"\>", ",", "\<\"Bedouin\"\>", 
+   ",", "\<\"begin\"\>", ",", "\<\"Begin\"\>", ",", "\<\"Benin\"\>", 
+   ",", "\<\"Benjamin\"\>", ",", "\<\"Berlin\"\>", ",", "\<\"Bernstein\"\>", 
+   ",", "\<\"Bevin\"\>", ",", "\<\"bin\"\>", ",", "\<\"biotin\"\>", 
+   ",", "\<\"birdbrain\"\>", ",", "\<\"Bloemfontein\"\>", 
+   ",", "\<\"bloodstain\"\>", ",", "\<\"boatswain\"\>", ",", "\<\"bobbin\"\>",
+    ",", "\<\"bodkin\"\>", ",", "\<\"boffin\"\>", ",", "\<\"born-again\"\>", 
+   ",", "\<\"Borodin\"\>", ",", "\<\"brain\"\>", ",", "\<\"Brain\"\>", 
+   ",", "\<\"Brattain\"\>", ",", "\<\"Britain\"\>", ",", "\<\"bruin\"\>", 
+   ",", "\<\"buckskin\"\>", ",", "\<\"built-in\"\>", ",", "\<\"Bukharin\"\>", 
+   ",", "\<\"Bulganin\"\>", ",", "\<\"bulletin\"\>", ",", "\<\"bumpkin\"\>", 
+   ",", "\<\"Bunin\"\>", ",", "\<\"buskin\"\>", ",", "\<\"cabin\"\>", 
+   ",", "\<\"Cain\"\>", ",", "\<\"Caitlin\"\>", ",", "\<\"calfskin\"\>", 
+   ",", "\<\"Calvin\"\>", ",", "\<\"capeskin\"\>", ",", "\<\"captain\"\>", 
+   ",", "\<\"Cardin\"\>", ",", "\<\"Carlin\"\>", ",", "\<\"casein\"\>", 
+   ",", "\<\"catkin\"\>", ",", "\<\"certain\"\>", ",", "\<\"chagrin\"\>", 
+   ",", "\<\"chain\"\>", ",", "\<\"Chaitin\"\>", ",", "\<\"chamberlain\"\>", 
+   ",", "\<\"Chamberlain\"\>", ",", "\<\"Champlain\"\>", 
+   ",", "\<\"chaplain\"\>", ",", "\<\"Chaplin\"\>", ",", "\<\"Charmin\"\>", 
+   ",", "\<\"Chernomyrdin\"\>", ",", "\<\"chieftain\"\>", 
+   ",", "\<\"chilblain\"\>", ",", "\<\"Ch'in\"\>", ",", "\<\"chin\"\>", 
+   ",", "\<\"chitin\"\>", ",", "\<\"Chopin\"\>", ",", "\<\"chromatin\"\>", 
+   ",", "\<\"clothespin\"\>", ",", "\<\"Cobain\"\>", ",", "\<\"Cochin\"\>", 
+   ",", "\<\"coffin\"\>", ",", "\<\"coin\"\>", ",", "\<\"Colin\"\>", 
+   ",", "\<\"Collin\"\>", ",", "\<\"complain\"\>", ",", "\<\"conjoin\"\>", 
+   ",", "\<\"constrain\"\>", ",", "\<\"contain\"\>", ",", "\<\"coonskin\"\>", 
+   ",", "\<\"Couperin\"\>", ",", "\<\"cousin\"\>", ",", "\<\"coxswain\"\>", 
+   ",", "\<\"cretin\"\>", ",", "\<\"Cronin\"\>", ",", "\<\"Cuchulain\"\>", 
+   ",", "\<\"cumin\"\>", ",", "\<\"curtain\"\>", ",", "\<\"Darin\"\>", 
+   ",", "\<\"Darrin\"\>", ",", "\<\"Darwin\"\>", ",", "\<\"dauphin\"\>", 
+   ",", "\<\"deerskin\"\>", ",", "\<\"dentin\"\>", ",", "\<\"detain\"\>", 
+   ",", "\<\"Devin\"\>", ",", "\<\"din\"\>", ",", "\<\"dioxin\"\>", 
+   ",", "\<\"disdain\"\>", ",", "\<\"dobbin\"\>", ",", "\<\"Dobbin\"\>", 
+   ",", "\<\"doeskin\"\>", ",", "\<\"dolphin\"\>", ",", "\<\"domain\"\>", 
+   ",", "\<\"drain\"\>", ",", "\<\"drumlin\"\>", ",", "\<\"dubbin\"\>", 
+   ",", "\<\"Dublin\"\>", ",", "\<\"Dunedin\"\>", ",", "\<\"dustbin\"\>", 
+   ",", "\<\"Dustin\"\>", ",", "\<\"Edwin\"\>", ",", "\<\"Efrain\"\>", 
+   ",", "\<\"Einstein\"\>", ",", "\<\"Eisenstein\"\>", ",", "\<\"elfin\"\>", 
+   ",", "\<\"Eltanin\"\>", ",", "\<\"Elvin\"\>", ",", "\<\"enchain\"\>", 
+   ",", "\<\"endorphin\"\>", ",", "\<\"enjoin\"\>", ",", "\<\"entertain\"\>", 
+   ",", "\<\"entrain\"\>", ",", "\<\"Epstein\"\>", ",", "\<\"Erin\"\>", 
+   ",", "\<\"Erwin\"\>", ",", "\<\"Excedrin\"\>", ",", "\<\"explain\"\>", 
+   ",", "\<\"eyestrain\"\>", ",", "\<\"Fagin\"\>", ",", "\<\"fain\"\>", 
+   ",", "\<\"fibrin\"\>", ",", "\<\"fin\"\>", ",", "\<\"firkin\"\>", 
+   ",", "\<\"floodplain\"\>", ",", "\<\"florin\"\>", 
+   ",", "\<\"foreordain\"\>", ",", "\<\"foreskin\"\>", 
+   ",", "\<\"formalin\"\>", ",", "\<\"fountain\"\>", 
+   ",", "\<\"Frankenstein\"\>", ",", "\<\"Franklin\"\>", 
+   ",", "\<\"Fraulein\"\>", ",", "\<\"Gagarin\"\>", ",", "\<\"gain\"\>", 
+   ",", "\<\"gamin\"\>", ",", "\<\"Gauguin\"\>", ",", "\<\"Gavin\"\>", 
+   ",", "\<\"Gawain\"\>", ",", "\<\"gelatin\"\>", ",", "\<\"Gershwin\"\>", 
+   ",", "\<\"gherkin\"\>", ",", "\<\"gin\"\>", ",", "\<\"globulin\"\>", 
+   ",", "\<\"glycerin\"\>", ",", "\<\"goatskin\"\>", ",", "\<\"goblin\"\>", 
+   ",", "\<\"Godwin\"\>", ",", "\<\"Goodwin\"\>", ",", "\<\"grain\"\>", 
+   ",", "\<\"gratin\"\>", ",", "\<\"gremlin\"\>", ",", "\<\"griffin\"\>", 
+   ",", "\<\"Griffin\"\>", ",", "\<\"grin\"\>", ",", "\<\"groin\"\>", 
+   ",", "\<\"grosgrain\"\>", ",", "\<\"hairpin\"\>", ",", "\<\"Hamlin\"\>", 
+   ",", "\<\"Hammerstein\"\>", ",", "\<\"handbasin\"\>", 
+   ",", "\<\"Harbin\"\>", ",", "\<\"Hardin\"\>", ",", "\<\"harlequin\"\>", 
+   ",", "\<\"Harlequin\"\>", ",", "\<\"hatpin\"\>", ",", "\<\"haywain\"\>", 
+   ",", "\<\"headpin\"\>", ",", "\<\"Heinlein\"\>", ",", "\<\"hemoglobin\"\>",
+    ",", "\<\"heparin\"\>", ",", "\<\"herein\"\>", ",", "\<\"heroin\"\>", 
+   ",", "\<\"highfalutin\"\>", ",", "\<\"hobgoblin\"\>", 
+   ",", "\<\"Hodgkin\"\>", ",", "\<\"Holbein\"\>", ",", "\<\"Holstein\"\>", 
+   ",", "\<\"Hussein\"\>", ",", "\<\"Ilyushin\"\>", ",", "\<\"ingrain\"\>", 
+   ",", "\<\"insulin\"\>", ",", "\<\"interleukin\"\>", ",", "\<\"Irvin\"\>", 
+   ",", "\<\"Irwin\"\>", ",", "\<\"Jacobin\"\>", ",", "\<\"Jain\"\>", 
+   ",", "\<\"javelin\"\>", ",", "\<\"jerkin\"\>", ",", "\<\"Jilin\"\>", 
+   ",", "\<\"Joaquin\"\>", ",", "\<\"join\"\>", ",", "\<\"Joplin\"\>", 
+   ",", "\<\"Justin\"\>", ",", "\<\"Kaitlin\"\>", ",", "\<\"kaolin\"\>", 
+   ",", "\<\"Karin\"\>", ",", "\<\"Keewatin\"\>", ",", "\<\"kelvin\"\>", 
+   ",", "\<\"Kelvin\"\>", ",", "\<\"keratin\"\>", ",", "\<\"Kevin\"\>", 
+   ",", "\<\"kidskin\"\>", ",", "\<\"kin\"\>", ",", "\<\"kingpin\"\>", 
+   ",", "\<\"Klein\"\>", ",", "\<\"Kosygin\"\>", ",", "\<\"Kremlin\"\>", 
+   ",", "\<\"Kristin\"\>", ",", "\<\"Kropotkin\"\>", ",", "\<\"lain\"\>", 
+   ",", "\<\"lambkin\"\>", ",", "\<\"lambskin\"\>", ",", "\<\"lamebrain\"\>", 
+   ",", "\<\"lanolin\"\>", ",", "\<\"lapin\"\>", ",", "\<\"Latin\"\>", 
+   ",", "\<\"lecithin\"\>", ",", "\<\"legerdemain\"\>", ",", "\<\"Lenin\"\>", 
+   ",", "\<\"leopardskin\"\>", ",", "\<\"Lichtenstein\"\>", 
+   ",", "\<\"Liechtenstein\"\>", ",", "\<\"Limousin\"\>", ",", "\<\"Lin\"\>", 
+   ",", "\<\"linchpin\"\>", ",", "\<\"Lohengrin\"\>", ",", "\<\"loin\"\>", 
+   ",", "\<\"main\"\>", ",", "\<\"maintain\"\>", ",", "\<\"mandarin\"\>", 
+   ",", "\<\"Mandarin\"\>", ",", "\<\"mandolin\"\>", ",", "\<\"manikin\"\>", 
+   ",", "\<\"Manitoulin\"\>", ",", "\<\"mannequin\"\>", ",", "\<\"margin\"\>",
+    ",", "\<\"Marin\"\>", ",", "\<\"Maritain\"\>", ",", "\<\"marlin\"\>", 
+   ",", "\<\"Marlin\"\>", ",", "\<\"martin\"\>", ",", "\<\"Martin\"\>", 
+   ",", "\<\"Marvin\"\>", ",", "\<\"maudlin\"\>", ",", "\<\"Mazarin\"\>", 
+   ",", "\<\"McCain\"\>", ",", "\<\"McClain\"\>", ",", "\<\"McLaughlin\"\>", 
+   ",", "\<\"Medellin\"\>", ",", "\<\"melanin\"\>", ",", "\<\"melatonin\"\>", 
+   ",", "\<\"Melvin\"\>", ",", "\<\"Menuhin\"\>", ",", "\<\"Merlin\"\>", 
+   ",", "\<\"Mervin\"\>", ",", "\<\"mescalin\"\>", ",", "\<\"Michelin\"\>", 
+   ",", "\<\"moccasin\"\>", ",", "\<\"moleskin\"\>", 
+   ",", "\<\"Montenegrin\"\>", ",", "\<\"Morin\"\>", ",", "\<\"Motrin\"\>", 
+   ",", "\<\"mountain\"\>", ",", "\<\"muezzin\"\>", ",", "\<\"muffin\"\>", 
+   ",", "\<\"mujaheddin\"\>", ",", "\<\"mullein\"\>", 
+   ",", "\<\"multivitamin\"\>", ",", "\<\"munchkin\"\>", 
+   ",", "\<\"murrain\"\>", ",", "\<\"muslin\"\>", ",", "\<\"napkin\"\>", 
+   ",", "\<\"niacin\"\>", ",", "\<\"ninepin\"\>", 
+   ",", "\<\"nitroglycerin\"\>", ",", "\<\"noggin\"\>", 
+   ",", "\<\"noradrenalin\"\>", ",", "\<\"Novocain\"\>", 
+   ",", "\<\"nubbin\"\>", ",", "\<\"Oberlin\"\>", ",", "\<\"obtain\"\>", 
+   ",", "\<\"Odin\"\>", ",", "\<\"oilskin\"\>", ",", "\<\"olefin\"\>", 
+   ",", "\<\"Olin\"\>", ",", "\<\"Onegin\"\>", ",", "\<\"onionskin\"\>", 
+   ",", "\<\"ordain\"\>", ",", "\<\"origin\"\>", ",", "\<\"Orin\"\>", 
+   ",", "\<\"overlain\"\>", ",", "\<\"Oxycontin\"\>", ",", "\<\"pain\"\>", 
+   ",", "\<\"paladin\"\>", ",", "\<\"palanquin\"\>", ",", "\<\"pangolin\"\>", 
+   ",", "\<\"paraffin\"\>", ",", "\<\"pectin\"\>", ",", "\<\"penguin\"\>", 
+   ",", "\<\"penicillin\"\>", ",", "\<\"Pepin\"\>", ",", "\<\"pepsin\"\>", 
+   ",", "\<\"pertain\"\>", ",", "\<\"Petain\"\>", 
+   ",", "\<\"P\[EAcute]tain\"\>", ",", "\<\"phenacetin\"\>", 
+   ",", "\<\"phenolphthalein\"\>", ",", "\<\"pidgin\"\>", 
+   ",", "\<\"pigskin\"\>", ",", "\<\"pin\"\>", ",", "\<\"pinyin\"\>", 
+   ",", "\<\"Pinyin\"\>", ",", "\<\"pippin\"\>", ",", "\<\"Pippin\"\>", 
+   ",", "\<\"plain\"\>", ",", "\<\"plantain\"\>", 
+   ",", "\<\"Pontchartrain\"\>", ",", "\<\"poplin\"\>", 
+   ",", "\<\"porcelain\"\>", ",", "\<\"Potemkin\"\>", ",", "\<\"Poussin\"\>", 
+   ",", "\<\"preordain\"\>", ",", "\<\"protein\"\>", ",", "\<\"puffin\"\>", 
+   ",", "\<\"pumpkin\"\>", ",", "\<\"purloin\"\>", ",", "\<\"Pushkin\"\>", 
+   ",", "\<\"pushpin\"\>", ",", "\<\"Putin\"\>", ",", "\<\"quatrain\"\>", 
+   ",", "\<\"Quentin\"\>", ",", "\<\"quin\"\>", ",", "\<\"quoin\"\>", 
+   ",", "\<\"Rabin\"\>", ",", "\<\"ragamuffin\"\>", ",", "\<\"rain\"\>", 
+   ",", "\<\"raisin\"\>", ",", "\<\"ramekin\"\>", ",", "\<\"Rankin\"\>", 
+   ",", "\<\"Rasputin\"\>", ",", "\<\"rattlebrain\"\>", 
+   ",", "\<\"reattain\"\>", ",", "\<\"redskin\"\>", ",", "\<\"reexplain\"\>", 
+   ",", "\<\"refrain\"\>", ",", "\<\"regain\"\>", ",", "\<\"rein\"\>", 
+   ",", "\<\"rejoin\"\>", ",", "\<\"remain\"\>", ",", "\<\"rennin\"\>", 
+   ",", "\<\"resin\"\>", ",", "\<\"restrain\"\>", ",", "\<\"retain\"\>", 
+   ",", "\<\"retrain\"\>", ",", "\<\"riboflavin\"\>", ",", "\<\"Ritalin\"\>", 
+   ",", "\<\"Robbin\"\>", ",", "\<\"robin\"\>", ",", "\<\"Robin\"\>", 
+   ",", "\<\"Robitussin\"\>", ",", "\<\"Rodin\"\>", ",", "\<\"rosin\"\>", 
+   ",", "\<\"Rubin\"\>", ",", "\<\"Rubinstein\"\>", ",", "\<\"ruin\"\>", 
+   ",", "\<\"Rumpelstiltskin\"\>", ",", "\<\"Ruskin\"\>", 
+   ",", "\<\"Sabin\"\>", ",", "\<\"saccharin\"\>", ",", "\<\"Sakhalin\"\>", 
+   ",", "\<\"Saladin\"\>", ",", "\<\"Sanhedrin\"\>", ",", "\<\"satin\"\>", 
+   ",", "\<\"scatterbrain\"\>", ",", "\<\"Scriabin\"\>", 
+   ",", "\<\"sealskin\"\>", ",", "\<\"sequin\"\>", ",", "\<\"serotonin\"\>", 
+   ",", "\<\"sharkskin\"\>", ",", "\<\"sheepskin\"\>", ",", "\<\"shin\"\>", 
+   ",", "\<\"sin\"\>", ",", "\<\"sirloin\"\>", ",", "\<\"sit-in\"\>", 
+   ",", "\<\"skein\"\>", ",", "\<\"skin\"\>", ",", "\<\"slain\"\>", 
+   ",", "\<\"snakeskin\"\>", ",", "\<\"Spain\"\>", ",", "\<\"spavin\"\>", 
+   ",", "\<\"spin\"\>", ",", "\<\"sprain\"\>", ",", "\<\"stain\"\>", 
+   ",", "\<\"Stalin\"\>", ",", "\<\"stein\"\>", ",", "\<\"Stein\"\>", 
+   ",", "\<\"stickpin\"\>", ",", "\<\"Stolypin\"\>", ",", "\<\"strain\"\>", 
+   ",", "\<\"streptomycin\"\>", ",", "\<\"subjoin\"\>", 
+   ",", "\<\"sustain\"\>", ",", "\<\"suzerain\"\>", ",", "\<\"swain\"\>", 
+   ",", "\<\"tailspin\"\>", ",", "\<\"Taliesin\"\>", ",", "\<\"tannin\"\>", 
+   ",", "\<\"tarpaulin\"\>", ",", "\<\"tenderloin\"\>", ",", "\<\"tenpin\"\>",
+    ",", "\<\"terrain\"\>", ",", "\<\"terrapin\"\>", ",", "\<\"therein\"\>", 
+   ",", "\<\"thin\"\>", ",", "\<\"Tianjin\"\>", ",", "\<\"tiepin\"\>", 
+   ",", "\<\"tin\"\>", ",", "\<\"tocsin\"\>", ",", "\<\"Tomlin\"\>", 
+   ",", "\<\"topspin\"\>", ",", "\<\"toxin\"\>", ",", "\<\"train\"\>", 
+   ",", "\<\"tuberculin\"\>", ",", "\<\"Turin\"\>", ",", "\<\"Turpin\"\>", 
+   ",", "\<\"twain\"\>", ",", "\<\"Twain\"\>", ",", "\<\"twin\"\>", 
+   ",", "\<\"uncertain\"\>", ",", "\<\"unchain\"\>", ",", "\<\"underlain\"\>",
+    ",", "\<\"underpin\"\>", ",", "\<\"unpin\"\>", ",", "\<\"urchin\"\>", 
+   ",", "\<\"vain\"\>", ",", "\<\"Valentin\"\>", ",", "\<\"vein\"\>", 
+   ",", "\<\"Ventolin\"\>", ",", "\<\"vermin\"\>", ",", "\<\"villain\"\>", 
+   ",", "\<\"villein\"\>", ",", "\<\"violin\"\>", ",", "\<\"virgin\"\>", 
+   ",", "\<\"vitamin\"\>", ",", "\<\"wain\"\>", ",", "\<\"Wallenstein\"\>", 
+   ",", "\<\"washbasin\"\>", ",", "\<\"welkin\"\>", ",", "\<\"wherein\"\>", 
+   ",", "\<\"wholegrain\"\>", ",", "\<\"win\"\>", ",", "\<\"wineskin\"\>", 
+   ",", "\<\"Wisconsin\"\>", ",", "\<\"within\"\>", 
+   ",", "\<\"Wittgenstein\"\>", ",", "\<\"Yeltsin\"\>", ",", "\<\"yin\"\>", 
+   ",", "\<\"zeppelin\"\>", ",", "\<\"Zollverein\"\>", 
+   ",", "\<\"Zworykin\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.8453537839678926`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "words", "]"}]], "Input",
+ CellChangeTimes->{{3.845353898481874*^9, 3.8453539017503767`*^9}}],
+
+Cell[BoxData["501"], "Output",
+ CellChangeTimes->{3.8453539023768663`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"words", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"DictionaryLookup", "[", 
+     RowBox[{"__", "~~", "\"\<in\>\""}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"MemberQ", "[", 
+      RowBox[{
+       RowBox[{"Flatten", "[", 
+        RowBox[{"TextWords", "[", 
+         RowBox[{"WordData", "[", 
+          RowBox[{"#", ",", "\"\<BroaderTerms\>\"", ",", "\"\<List\>\""}], 
+          "]"}], "]"}], "]"}], ",", "\"\<substance\>\""}], "]"}], "&"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.845351955977809*^9, 3.845351968218855*^9}, {
+  3.845352016621933*^9, 3.8453520338210125`*^9}, {3.845352496896515*^9, 
+  3.84535250819219*^9}, {3.8453526964393835`*^9, 3.8453526975301046`*^9}, {
+  3.8453527357519455`*^9, 3.845352736219492*^9}, {3.8453529131118093`*^9, 
+  3.845352975346468*^9}, {3.8453535526424627`*^9, 3.8453535803509274`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "TextWords","arg1","\"String or ContentObject expected at position 1.\"",2,
+   33,3,26385040835199709126,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.845353581329044*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "TextWords","arg1","\"String or ContentObject expected at position 1.\"",2,
+   33,4,26385040835199709126,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8453535813399863`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "TextWords","arg1","\"String or ContentObject expected at position 1.\"",2,
+   33,5,26385040835199709126,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8453535813489904`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"TextWords\\\", \\\"::\\\
+\", \\\"arg1\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,33,6,26385040835199709126,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8453535813599634`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"chromatin\"\>", ",", "\<\"strain\"\>", ",", "\<\"toxin\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.845353001350134*^9, 3.84535358200831*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WordData", "[", 
+  RowBox[{"\"\<toxin\>\"", ",", "\"\<BroaderTerms\>\"", ",", "\"\<List\>\""}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.8453530071025114`*^9, 3.845353032980753*^9}, {
+  3.8453530716074877`*^9, 3.845353072723651*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"poison\"\>", ",", "\<\"poisonous substance\"\>", 
+   ",", "\<\"toxicant\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.845353013563284*^9, 3.8453530335376816`*^9}, 
+   3.8453530735941257`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "words", "]"}]], "Input",
+ CellChangeTimes->{{3.8453520364091897`*^9, 3.8453520413615828`*^9}}],
+
+Cell[BoxData["501"], "Output",
+ CellChangeTimes->{3.8453520424548984`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{
+   RowBox[{"WordData", "[", 
+    RowBox[{
+    "\"\<toxin\>\"", ",", "\"\<BroaderTerms\>\"", ",", "\"\<List\>\""}], 
+    "]"}], ",", 
+   RowBox[{"__", "~~", "\"\<substance\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.845353085014654*^9, 3.8453530994447246`*^9}, {
+  3.8453533283426003`*^9, 3.8453533330396285`*^9}, {3.845353379889181*^9, 
+  3.845353423254396*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.845353103370507*^9, 3.845353333704433*^9, {3.845353381212804*^9, 
+   3.8453533919557943`*^9}, 3.8453534236597557`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{
+   RowBox[{"Flatten", "[", 
+    RowBox[{"TextWords", "[", 
+     RowBox[{"WordData", "[", 
+      RowBox[{
+      "\"\<toxin\>\"", ",", "\"\<BroaderTerms\>\"", ",", "\"\<List\>\""}], 
+      "]"}], "]"}], "]"}], ",", "\"\<substance\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.8453531432448225`*^9, 3.845353187728879*^9}, {
+  3.845353497348831*^9, 3.845353539279998*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.845353109578041*^9, {3.8453531456706867`*^9, 3.845353188476045*^9}, {
+   3.845353511898638*^9, 3.845353539663604*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WordData", "[", 
+  RowBox[{
+  "\"\<adrenalin\>\"", ",", "\"\<BroaderTerms\>\"", ",", "\"\<List\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8453536279139233`*^9, 3.8453536538421364`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WordData", "[", 
+  RowBox[{"\<\"adrenalin\"\>", ",", "\<\"BroaderTerms\"\>", 
+   ",", "\<\"List\"\>"}], "]"}]], "Output",
+ CellChangeTimes->{{3.8453536401203003`*^9, 3.8453536546181555`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.845353760665907*^9, 3.845353767845272*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8453538495096083`*^9, 3.845353864334804*^9}}]
+},
+WindowSize->{759, 813},
+WindowMargins->{{Automatic, 172}, {83, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (2016\:5e747\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 201, 4, 47, "Input"],
+Cell[784, 28, 12808, 179, 981, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13629, 212, 131, 2, 47, "Input"],
+Cell[13763, 216, 74, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13874, 222, 868, 19, 84, "Input"],
+Cell[14745, 243, 228, 5, 24, "Message"],
+Cell[14976, 250, 230, 5, 24, "Message"],
+Cell[15209, 257, 230, 5, 24, "Message"],
+Cell[15442, 264, 343, 7, 24, "Message"],
+Cell[15788, 273, 190, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16015, 282, 258, 5, 47, "Input"],
+Cell[16276, 289, 237, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16550, 299, 133, 2, 47, "Input"],
+Cell[16686, 303, 74, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16797, 309, 418, 10, 47, "Input"],
+Cell[17218, 321, 175, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17430, 329, 420, 10, 47, "Input"],
+Cell[17853, 341, 174, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18064, 349, 216, 5, 47, "Input"],
+Cell[18283, 356, 215, 4, 30, "Output"]
+}, Open  ]],
+Cell[18513, 363, 92, 1, 30, "Input"],
+Cell[18608, 366, 94, 1, 30, "Input"]
+}
+]
+*)
+

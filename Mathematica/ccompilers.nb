@@ -1,0 +1,225 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7384,        217]
+NotebookOptionsPosition[      6465,        180]
+NotebookOutlinePosition[      6821,        196]
+CellTagsIndexPosition[      6778,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "_Real"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"sum", ",", "inc"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"sum", "=", "1.0"}], ";", 
+        RowBox[{"inc", "=", "1.0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"inc", "=", 
+            RowBox[{"inc", "*", 
+             RowBox[{"x", "/", "i"}]}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"sum", "=", 
+            RowBox[{"sum", "+", "inc"}]}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "n"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "sum"}]}], "]"}], ",", 
+     RowBox[{"CompilationTarget", "\[Rule]", "\"\<C\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.84266924919619*^9, 3.8426693474766655`*^9}, {
+  3.842669404691219*^9, 3.842669423034365*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CreateLibrary","badcomp",
+   "\"Compiler specification \\\"Compiler\\\" -> \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"CCompiler\\\\\\\"\\\", \\\"\[Rule]\\\", \
+\\\"CCompilerDriver`GenericCCompiler`GenericCCompiler\\\"}], \\\",\\\", \
+RowBox[{\\\"\\\\\\\"CompilerInstallation\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\
+\\\\\"D:\\\\\\\\\\\\\\\\mingw-w64\\\\\\\\\\\\\\\\x86_64-8.1.0-win32-seh-rt_v6-\
+rev0\\\\\\\\\\\\\\\\mingw64\\\\\\\\\\\\\\\\bin\\\\\\\"\\\"}]}], \
+\\\"}\\\"}]\\) does not specify a compiler driver listed by CCompilers[Full].\
+\"",2,7,4,26367475011560107090,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.842669756729227*^9, 3.8426701040033813`*^9, 
+  3.842671082661805*^9, 3.8426711702421036`*^9, 3.842671726339611*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Compile","nogen",
+   "\"A library could not be generated from the compiled function.\"",2,7,5,
+   26367475011560107090,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.842669756729227*^9, 3.8426701040033813`*^9, 
+  3.842671082661805*^9, 3.8426711702421036`*^9, 3.8426717263552074`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<CCompilerDriver`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8426697614498034`*^9, 3.842669769470577*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$CCompilerDirectory"], "Input",
+ CellChangeTimes->{{3.8426713978104343`*^9, 3.842671406376839*^9}}],
+
+Cell[BoxData["\<\"D:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\11.0\\\\SystemFiles\\\\Components\\\\\
+CCompilerDriver\\\\\"\>"], "Output",
+ CellChangeTimes->{3.8426714074360056`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CCompilers", "[", "Full", "]"}]], "Input",
+ CellChangeTimes->{{3.8426697718137293`*^9, 3.842669780557681*^9}, {
+  3.8426701274423265`*^9, 3.8426701336150475`*^9}, {3.8426703176261325`*^9, 
+  3.842670318200965*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"Intel Compiler\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`IntelCompiler`IntelCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", "\[Rule]", "None"}], ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"Generic C Compiler\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`GenericCCompiler`GenericCCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", "\[Rule]", "None"}], ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.842669775739354*^9, 3.8426697812449193`*^9}, {
+   3.842670114185382*^9, 3.8426701347678423`*^9}, {3.842670314494707*^9, 
+   3.842670319255106*^9}, 3.8426713927834997`*^9, 3.8426717460518303`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CCompiler", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+    "\"\<CCompiler\>\"", "\[Rule]", 
+     "CCompilerDriver`GenericCCompiler`GenericCCompiler"}], ",", 
+    RowBox[{
+    "\"\<CompilerInstallation\>\"", "\[Rule]", 
+     "\"\<D:\\\\mingw-w64\\\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\\\mingw64\\\\\
+bin\>\""}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.842670813030716*^9, 3.8426709745350285`*^9}, 
+   3.8426710699814053`*^9, {3.842671291240435*^9, 3.8426713040485263`*^9}, 
+   3.8426716078611608`*^9, {3.8426716608508415`*^9, 3.8426716623504915`*^9}, {
+   3.8426716927446575`*^9, 3.8426717056315413`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"CCompiler\"\>", "\[Rule]", 
+    "CCompilerDriver`GenericCCompiler`GenericCCompiler"}], ",", 
+   RowBox[{"\<\"CompilerInstallation\"\>", 
+    "\[Rule]", \
+"\<\"D:\\\\mingw-w64\\\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\\\mingw64\\\\bin\"\
+\>"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.84267107547158*^9, 3.8426717232432213`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DefaultCCompiler", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.8426711372580633`*^9, 3.8426711461304045`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CreateLibrary","nocomp",
+   "\"A C compiler cannot be found on your system. Please consult the \
+documentation to learn how to set up suitable compilers.\"",2,3,3,
+   26367475011560107090,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8426713868527884`*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.842671146850376*^9, 3.842671386868438*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8426715857130775`*^9, 3.8426716043344607`*^9}}]
+},
+WindowSize->{759, 813},
+WindowMargins->{{Automatic, 20}, {80, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (2016\:5e747\:670828\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1193, 33, 196, "Input"],
+Cell[1776, 57, 803, 13, 65, "Message"],
+Cell[2582, 72, 340, 7, 24, "Message"]
+}, Open  ]],
+Cell[2937, 82, 149, 2, 47, "Input"],
+Cell[CellGroupData[{
+Cell[3111, 88, 113, 1, 30, "Input"],
+Cell[3227, 91, 197, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3461, 99, 238, 4, 47, "Input"],
+Cell[3702, 105, 1004, 20, 88, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4743, 130, 635, 14, 69, "Input"],
+Cell[5381, 146, 380, 9, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5798, 160, 134, 2, 30, "Input"],
+Cell[5935, 164, 314, 7, 45, "Message"],
+Cell[6252, 173, 98, 1, 30, "Output"]
+}, Open  ]],
+Cell[6365, 177, 96, 1, 30, "Input"]
+}
+]
+*)
+
