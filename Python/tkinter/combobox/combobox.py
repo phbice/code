@@ -26,7 +26,7 @@ class MainGUI(tk.Tk):
             textvariable=self.number)
         self.number_combobox['values'] = (1, 5, 10, 20, 50, 100)
         self.number_combobox.grid(column=1, row=1)
-        self.number_combobox.state(['readonly'])
+        # self.number_combobox.state(['readonly'])
         # self.number_combobox.bind('<<ComboboxSelected>>',
         #     lambda e: self.number_combobox.selection_clear())
         # self.number_combobox.current(0)
