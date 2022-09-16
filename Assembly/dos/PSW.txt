@@ -1,0 +1,13 @@
+NV UP EI PL NZ NA PO NC
+^  ^  ^  ^  ^  ^  ^  ^
+OF DF IF SF ZF AF PF CF
+
+标志位     1                       0
+ZF      ZR[Zero]                NZ[Not Zero]
+PF      PE[Parity Even]         PO[Parity Odd]
+SF      NG[Negative]            PL[Plus]
+CF      CY[Carry]               NC[No Carry]
+OF      OV[Overflow]            NV[Not Overflow]
+AF      AC[Auxiliary Carry]     NA[No Auxiliary Carry]
+DF      DN[Down]                UP[UP]
+IF      EI[Enable Interrupt]    DI[Disable Interrupt]
